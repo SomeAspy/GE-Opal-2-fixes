@@ -4,6 +4,12 @@ This repository documents, all my attempts to make the GE Opal 2 not kill itself
 
 Important context to a lot of frustration here: This is a $500 dollar ice machine. It has a lifespan of 6 months to 1 year
 
+## Notice
+
+As I was writing this, Reddit decided to delete the 2 year old post I was using as a reference.
+Some of the more important images are available in ./images
+https://web.archive.org/web/20250804095737/https://www.reddit.com/r/IceChewersAnonymous/comments/1hxlbkg/fixing_the_opal_20/
+
 ## The Problem
 
 The GE Opal ice maker has well-known issues where it will start to fail after about a year of use, and in some cases, prior.
