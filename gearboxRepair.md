@@ -9,7 +9,7 @@ https://www.youtube.com/watch?v=qTffBY9GRwQ
 - 1x 6002zz bearing ([SKF](https://www.skf.com/sg/products/rolling-bearings/ball-bearings/deep-groove-ball-bearings/productid-6002-2Z))
 - 2x 696zz bearings ([SKF](https://www.skf.com/group/products/rolling-bearings/ball-bearings/deep-groove-ball-bearings/productid-619%2F6-2Z))
 - 4x 695zz bearings ([SKF](https://www.skf.com/group/products/rolling-bearings/ball-bearings/deep-groove-ball-bearings/productid-619%2F5-2Z))
-- Food-safe low-temperature synthetic NGLI 2 grease ([Super Lube 21030 Synthetic Multi-Purpose Grease](https://www.amazon.com/dp/B0CTRXGFZQ) happens to fit these requirements)
+- Food-safe low-temperature synthetic NGLI 2 grease ([Super Lube 21030 Synthetic Multi-Purpose Grease](https://www.amazon.com/dp/B000XBH9HI) happens to fit these requirements)
 
 > [!CAUTION]
 > You cannot use any type of grease in the gearbox. **It must be food safe (NSF H1)**

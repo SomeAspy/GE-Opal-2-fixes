@@ -7,7 +7,7 @@ The housing at the top of the auger appears to have a plastic bushing, which in 
 
 I attempted to remove the plastic bushing, to attempt replacing it with a proper bearing but was unable to get it out.
 
-I ended up just applying [Super Lube 21030 Synthetic Multi-Purpose Grease](https://www.amazon.com/dp/B0CTRXGFZQ) to the top and the bushing at the bottom of the shaft.
+I ended up just applying [Super Lube 21030 Synthetic Multi-Purpose Grease](https://www.amazon.com/dp/B000XBH9HI) to the top and the bushing at the bottom of the shaft.
 
 Before applying new grease, make sure you remove all the old grease first (if there is any)
 This is also a good time to inspect the auger and housing for damage/scale. In my case scale usually looked like a white powder that could be easily removed with a cloth.
