@@ -25,3 +25,7 @@ More importantly, several members of the community have taken attempts to repair
 - https://www.reddit.com/r/IceChewersAnonymous/comments/1ophadu/opal_20_repair_update/
 - https://www.reddit.com/r/IceChewersAnonymous/comments/1hxlbkg/fixing_the_opal_20/
 - https://www.reddit.com/r/IceChewersAnonymous/comments/159ts6e/ge_opal_20_add_water_fix/
+
+# Piping
+
+![Piping](./pipes.svg)
