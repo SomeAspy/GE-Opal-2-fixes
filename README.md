@@ -4,6 +4,9 @@ This repository documents, all my attempts to make the GE Opal 2 not kill itself
 
 Important context to a lot of frustration here: This is a $500 dollar ice machine. It has a lifespan of 6 months to 1 year
 
+> [!WARNING]  
+> Schematics and code are not final or tested yet.
+
 ## Notice
 
 As I was writing this, Reddit decided to delete the 2 year old post I was using as a reference.
