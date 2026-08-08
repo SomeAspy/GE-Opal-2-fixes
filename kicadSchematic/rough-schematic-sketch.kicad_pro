@@ -256,7 +256,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "rough-schematic-sketch].kicad_pro",
+    "filename": "rough-schematic-sketch.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -424,7 +424,7 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "rough-schematic-sketch].kicad_sch",
+        "filename": "rough-schematic-sketch.kicad_sch",
         "name": "",
         "uuid": "3caecd39-8377-4639-951b-eef5198ca2fc"
       }

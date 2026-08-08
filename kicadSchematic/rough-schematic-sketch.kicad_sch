@@ -4,6 +4,13 @@
 	(generator_version "10.0")
 	(uuid "3caecd39-8377-4639-951b-eef5198ca2fc")
 	(paper "A4")
+	(title_block
+		(title "GE Opal 2 Board replacement")
+		(date "2026-08-08")
+		(company "https://aspy.dev")
+		(comment 1 "https://github.com/someaspy")
+		(comment 2 "amb@aspy.dev")
+	)
 	(lib_symbols
 		(symbol "Device:Ammeter_AC"
 			(pin_numbers
@@ -3954,12 +3961,6 @@
 		(uuid "ccddcd28-531c-4f95-8645-4b3d13b43ccb")
 	)
 	(junction
-		(at 212.09 96.52)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "dfafb7b9-cfeb-4212-842d-d7ecfa0b0225")
-	)
-	(junction
 		(at 209.55 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3994,26 +3995,6 @@
 			(type default)
 		)
 		(uuid "01a52949-6927-4371-b40b-b734302ad6d8")
-	)
-	(wire
-		(pts
-			(xy 217.17 72.39) (xy 217.17 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "02d990e8-a72d-4e84-ae0d-121922401b4e")
-	)
-	(wire
-		(pts
-			(xy 212.09 106.68) (xy 212.09 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "041e11db-d6cc-46e5-ae95-fda02f20e700")
 	)
 	(wire
 		(pts
@@ -4157,7 +4138,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 74.93) (xy 209.55 74.93)
+			(xy 209.55 74.93) (xy 227.33 74.93)
 		)
 		(stroke
 			(width 0)
@@ -4214,16 +4195,6 @@
 			(type default)
 		)
 		(uuid "46548879-5418-43e1-835b-584c6076f80b")
-	)
-	(wire
-		(pts
-			(xy 227.33 72.39) (xy 217.17 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4974aa3f-9412-4da2-a74d-465aca7c5e19")
 	)
 	(wire
 		(pts
@@ -4337,7 +4308,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 96.52) (xy 212.09 96.52)
+			(xy 209.55 96.52) (xy 218.44 96.52)
 		)
 		(stroke
 			(width 0)
@@ -4547,6 +4518,16 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 74.93) (xy 227.33 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b249b4ee-1dd3-494c-a332-88a31fc11615")
+	)
+	(wire
+		(pts
 			(xy 80.01 113.03) (xy 91.44 113.03)
 		)
 		(stroke
@@ -4594,16 +4575,6 @@
 			(type default)
 		)
 		(uuid "bca672fc-5cc2-456f-b56c-28b73a918e55")
-	)
-	(wire
-		(pts
-			(xy 212.09 96.52) (xy 218.44 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bdec5ab4-4ed1-411e-bb46-7af19b03fc58")
 	)
 	(wire
 		(pts
@@ -4775,7 +4746,7 @@
 			(uuid "d7e6167b-78a7-43f6-8925-a101a8ed0804")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR011")
 					(unit 1)
@@ -4855,7 +4826,7 @@
 			(uuid "7f82c977-1b0a-45b9-a7e8-b6c033997d3e")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "MES1")
 					(unit 1)
@@ -4933,7 +4904,7 @@
 			(uuid "49309d48-046f-4d86-b19e-049f6892f2f5")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR06")
 					(unit 1)
@@ -5037,7 +5008,7 @@
 			(uuid "b996c1cf-bd26-4b31-b277-10a5646fd7d1")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "D5")
 					(unit 1)
@@ -5119,7 +5090,7 @@
 			(uuid "b4b25135-0356-4a59-9653-b802bd53058f")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "M3")
 					(unit 1)
@@ -5197,7 +5168,7 @@
 			(uuid "812f17ef-fa19-4445-91eb-7e657a27b5a8")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR08")
 					(unit 1)
@@ -5275,7 +5246,7 @@
 			(uuid "69d21a5b-72e1-4f76-b566-8c5ecd07dfb6")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR018")
 					(unit 1)
@@ -5364,7 +5335,7 @@
 			(uuid "8596d65e-f7ae-49ef-b0fd-07c23c7ca32c")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "K1")
 					(unit 1)
@@ -5443,7 +5414,7 @@
 			(uuid "1d3b300e-4c7e-4a8d-b186-3752a48482a0")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR020")
 					(unit 1)
@@ -5525,7 +5496,7 @@
 			(uuid "aa3a4bbe-6663-4ee4-b1cc-7278c56adcc4")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "R4")
 					(unit 1)
@@ -5603,7 +5574,7 @@
 			(uuid "fe59556f-2695-4b5b-8486-54d5adc95771")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR03")
 					(unit 1)
@@ -5682,7 +5653,7 @@
 			(uuid "3ada2934-e22c-47f7-9375-492bebae398a")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR017")
 					(unit 1)
@@ -5760,7 +5731,7 @@
 			(uuid "a5946830-18c1-4a20-8d49-1ada1f1e5a05")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR01")
 					(unit 1)
@@ -5839,7 +5810,7 @@
 			(uuid "d7b4b91c-d6a9-47a9-90a8-0f28266af964")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR016")
 					(unit 1)
@@ -5919,7 +5890,7 @@
 			(uuid "ed6c2458-c499-40b6-af4c-b78eebcb59c8")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "SW1")
 					(unit 1)
@@ -6001,7 +5972,7 @@
 			(uuid "c93af4ec-62e6-447b-8709-f9d9b4516e53")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "M1")
 					(unit 1)
@@ -6086,7 +6057,7 @@
 			(uuid "06faa59b-bc1d-4b18-aab6-dd097b97b4f0")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "Q2")
 					(unit 1)
@@ -6166,7 +6137,7 @@
 			(uuid "07760861-6689-41ce-ab04-5150ab48b71c")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "M4")
 					(unit 1)
@@ -6248,7 +6219,7 @@
 			(uuid "71cb2e4d-0b60-4e87-9831-a912e6fb5423")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "M2")
 					(unit 1)
@@ -6326,7 +6297,7 @@
 			(uuid "79e6dd13-e346-47c4-8257-717d8d8c7881")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR09")
 					(unit 1)
@@ -6404,7 +6375,7 @@
 			(uuid "eafce420-8d23-4867-9d1d-be2c7efd9304")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR04")
 					(unit 1)
@@ -6485,7 +6456,7 @@
 			(uuid "6e1c5dc0-492a-423c-9f01-ae9ec2da757b")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "R3")
 					(unit 1)
@@ -6574,7 +6545,7 @@
 			(uuid "43ee2d44-69ed-4510-9149-d45b0710d274")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "K2")
 					(unit 1)
@@ -6653,7 +6624,7 @@
 			(uuid "ebcea50e-6252-4355-a958-53d0000df0d1")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR05")
 					(unit 1)
@@ -6738,7 +6709,7 @@
 			(uuid "76f4255c-edeb-4a67-8c9c-3a8a18654282")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "Q3")
 					(unit 1)
@@ -6905,7 +6876,7 @@
 			(uuid "d6f7de6b-5675-4ae2-9ba5-c64e3c0e37ff")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "A1")
 					(unit 1)
@@ -6985,7 +6956,7 @@
 			(uuid "ce290a34-e94c-4a4c-9e67-460c856a4a79")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "SW2")
 					(unit 1)
@@ -7063,7 +7034,7 @@
 			(uuid "7eea649c-2449-4f98-827d-1f619ebaa804")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR012")
 					(unit 1)
@@ -7143,7 +7114,7 @@
 			(uuid "306dd52a-c4ad-4ea3-9a76-a6ede69ef66d")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "SW4")
 					(unit 1)
@@ -7228,7 +7199,7 @@
 			(uuid "5bd98f4f-b79e-4233-8c2d-94316de43773")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "Q1")
 					(unit 1)
@@ -7308,7 +7279,7 @@
 			(uuid "d64e91c1-b000-44b7-869e-8cdb6706246b")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "SW6")
 					(unit 1)
@@ -7399,7 +7370,7 @@
 			(uuid "941df9e2-97ca-4f00-ae6d-51b72b6afc56")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "D1")
 					(unit 1)
@@ -7478,7 +7449,7 @@
 			(uuid "4ceab14c-395b-4836-a450-527c70811b78")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR015")
 					(unit 1)
@@ -7558,7 +7529,7 @@
 			(uuid "7b7de0a0-c275-47db-b970-19aea552fb4d")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "SW3")
 					(unit 1)
@@ -7662,7 +7633,7 @@
 			(uuid "394f4cfa-8814-492c-abe8-e5df2564e6f4")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "D4")
 					(unit 1)
@@ -7740,7 +7711,7 @@
 			(uuid "32123e80-ed2a-4d00-945b-88bd01e324fb")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR010")
 					(unit 1)
@@ -7831,7 +7802,7 @@
 			(uuid "5a221df9-dd79-481e-b1fd-372b1d24f9ce")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "D3")
 					(unit 1)
@@ -7909,7 +7880,7 @@
 			(uuid "88cec041-76aa-42f9-bf9b-4a31933e9e10")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR07")
 					(unit 1)
@@ -7988,7 +7959,7 @@
 			(uuid "80769deb-b936-418e-9086-f5bab87892c1")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR019")
 					(unit 1)
@@ -8067,7 +8038,7 @@
 			(uuid "346c6e1e-8ee6-45eb-abea-dcef2a372d1e")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR02")
 					(unit 1)
@@ -8145,7 +8116,7 @@
 			(uuid "b3e41b77-592e-462a-89f6-b88442c7202a")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR014")
 					(unit 1)
@@ -8225,7 +8196,7 @@
 			(uuid "5995606a-9624-4d74-be7a-aa4b43b32de6")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "SW5")
 					(unit 1)
@@ -8315,7 +8286,7 @@
 			(uuid "1f41356d-e013-4a3d-9e62-04ca7f5d121b")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "D2")
 					(unit 1)
@@ -8344,7 +8315,7 @@
 				)
 			)
 		)
-		(property "Value" "220"
+		(property "Value" "220Ω"
 			(at 91.186 117.348 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8394,7 +8365,7 @@
 			(uuid "4996163b-1144-45c8-abca-6607a3956707")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "R2")
 					(unit 1)
@@ -8472,7 +8443,7 @@
 			(uuid "f7b92400-c002-4d41-aa0b-831caf0311a5")
 		)
 		(instances
-			(project "rough-schematic-sketch]"
+			(project "rough-schematic-sketch"
 				(path "/3caecd39-8377-4639-951b-eef5198ca2fc"
 					(reference "#PWR013")
 					(unit 1)
