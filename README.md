@@ -7,6 +7,15 @@ Important context to a lot of frustration here: This is a $500 dollar ice machin
 > [!WARNING]  
 > Schematics and code are not final or tested yet.
 
+### My blog post on this
+
+[A Scathing Review of the GE Opal 2 Nugget Ice Maker](https://blog.aspy.dev/a-scathing-review-of-the-ge-opal-2-nugget-ice-maker/)
+
+# Background
+
+I've tried putting lubrication on the auger ([./squeakFromShaft.md](./squeakFromShaft.md)) but it did not resolve the squeaking issue
+I've decided I am going to replace the PCB with an arduino to implement a proper defrost cycle.
+
 ## Notice
 
 As I was writing this, Reddit decided to delete the 2 year old post I was using as a reference.
@@ -32,3 +41,25 @@ More importantly, several members of the community have taken attempts to repair
 # Piping
 
 ![Piping](./pipes.svg)
+
+# Nominal voltages recorded from the opal 2 ice maker during operation
+
+| Part                    | Connector Type          | Voltage
+|------------------------ |------------------------ |-------- |
+| UV Light                | JST XH 2-pin connector  | 12V DC  |
+| Compressor              | JST VHR 3-pin connector | 120V AC |
+| Auger Motor             | JST VHR 3-pin connector | 120V AC |
+| Pump                    | JST XH 2-pin connector  | 12V DC  |
+| Fan                     | JST XH 2-pin connector  | 12V DC  |
+| WiFi Board              | TBD                     | TBD     |
+| Front Panel             | TBD                     | TBD     |
+| Ice Box LED             | JST XH 2-pin connector  | 12V DC  |
+| Ice box presence switch | JST XH 2-pin connector  | 5V DC   |
+| Internal Tank Floats    | JST XH 4-pin connector  | 5V DC   |
+| IR LED For Capacity     | JST XH 2-pin connector  | 5V DC   |
+| IR Receiver             | JST XH 2-pin connector  | 5V DC   |
+| AC Input                | JST VHR 3-pin connector | 120V AC |
+
+- Internal Tank Floats (4 wires, 2 floats)
+  - Black & Red: Lower float (float low = closed circuit)
+  - Yellow & White: Upper float (float high = closed circuit)

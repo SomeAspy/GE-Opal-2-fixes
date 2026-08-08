@@ -18,14 +18,14 @@ title: Flow of water &\npiping diagram {
   }
 }
 
-external tank -> internal tank (lower)
-internal tank (lower) -> pump
-pump -> enclosed tank
-enclosed tank -> T junction
+external tank -> front tank
+front tank -> pump
+pump -> internal tank
+internal tank -> T junction
 T junction -> drain hose
 T junction -> ice maker
 
-ice maker -> ice melting -> internal tank (lower) {
+ice maker -> ice melting -> front tank {
   style: {
     stroke-dash: 3
   }
