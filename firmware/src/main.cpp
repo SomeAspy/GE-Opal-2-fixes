@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <EmonLib.h>
 
 // Pins
 const int PowerSwitch = 2;
@@ -14,7 +15,16 @@ const int Pump = 12;
 const int IrReceiver = 13;
 const int MotorAmmeter = A0;
 
+// Run the compressor
+// Run the auger
+// Monitor the Ammeter
+// Compressor needs cooldown
+
+EnergyMonitor augerMeter;
+
 void setup() {
+    Serial.begin(115200);
+
   // Grounded inputs need to be pulled up
   pinMode(PowerSwitch, INPUT_PULLUP);
   pinMode(BinSwitch, INPUT_PULLUP);
@@ -32,6 +42,7 @@ void setup() {
   pinMode(Fan, OUTPUT);
   pinMode(UvLed, OUTPUT);
   pinMode(Pump, OUTPUT);
+  augerMeter.current(MotorAmmeter, 5.76); // Calibration factor by gemini, because I'm not calculating it
 };
 
 // Persistent Values
@@ -39,6 +50,9 @@ bool pumping = false;
 bool waitingForReset = false;
 const unsigned long pumpTimeout = 30000; // 30s
 unsigned long pumpStartedTime = 0;
+unsigned long compressorStopTime = 300001;
+const unsigned long compressorTimeout = 300000; // 5m
+bool isCompressorRunning = false;
 
 void loop() {
   // DIGITAL READS ARE INVERTED BECAUSE WE PULL UP!!!
@@ -46,14 +60,19 @@ void loop() {
   const bool isTankFull = digitalRead(TankFull) == LOW;
   const bool isTankEmpty = digitalRead(TankEmpty) == LOW;
   const bool isBinInserted = digitalRead(BinSwitch) == LOW;
+  double currentAmps = augerMeter.calcIrms(1480);
+
+  Serial.println(currentAmps);
 
   if (!isPowered || waitingForReset) {
+    Serial.println("Halted");
       digitalWrite(Pump, LOW);
       digitalWrite(Compressor, LOW);
       digitalWrite(Fan, LOW);
       digitalWrite(UvLed, LOW);
       digitalWrite(IrBlaster, LOW);
       digitalWrite(Auger, LOW);
+      compressorStopTime = millis();
       pumping = false;
     if (!isBinInserted) {
         waitingForReset = false;
@@ -63,6 +82,7 @@ void loop() {
 
   if (pumping && (millis() - pumpStartedTime  > pumpTimeout)) {
     // We are probably out of water
+    Serial.println("no water?");
     waitingForReset = true;
     return;
   }
@@ -70,6 +90,7 @@ void loop() {
   if (isTankEmpty && !pumping) {
     digitalWrite(UvLed, HIGH);
     digitalWrite(Pump, HIGH);
+
     pumping = true;
     pumpStartedTime = millis();
   }
@@ -78,5 +99,14 @@ void loop() {
     digitalWrite(UvLed, LOW);
     digitalWrite(Pump, LOW);
     pumping = false;
+  }
+
+  if(!isCompressorRunning){
+      if(millis()-compressorStopTime < compressorTimeout){
+          return;
+      }
+      digitalWrite(Compressor, HIGH);
+      digitalWrite(Fan, HIGH);
+      digitalWrite(Auger, HIGH);
   }
 }
