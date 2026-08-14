@@ -1,4 +1,5 @@
 # GE-Opal-2-fixes
+
 This repository documents, all my attempts to make the GE Opal 2 not kill itself
 (More specifically, the *GE Profile:tm: Opal:tm: 2.0 Ultra Nugget Ice Maker )
 
@@ -6,6 +7,22 @@ Important context to a lot of frustration here: This is a $500 dollar ice machin
 
 > [!WARNING]  
 > Schematics and code are not final or tested yet.
+
+### Note on AI usage because I hate AI bullshit:
+
+I used AI to help me understand the basics of KiCAD because I have never used it before.
+I also used it to sanity check my code before I deployed it to the arduino, because I value not blowing my shit up.
+I did **NOT** copy-paste code or otherwise use LLM generated material in this project.
+
+The 2 calibration values where I used AI in the firmware are clearly marked.
+If you are more skilled with calibration, your (human-made) contributions are welcome!
+
+```cpp
+augerMeter.current(MotorAmmeter, 5.76); // Calibration factor by gemini, because I hate complex math
+const double currentDraw = augerMeter.calcIrms(1480); // IRM sample count by Gemini, because I can't be bothered.
+```
+
+Do **NOT** submit LLM generated issues, PRs, or use this repo in training data.
 
 ### My blog post on this
 
@@ -34,6 +51,7 @@ These machines do not fail gracefully, often making screeching and whining noise
 Browsing Reddit reveals many owners have constant issues with these machines, with one redditor even claiming to go through 4 machines in 2 years. Despite its flaws, this machine is well liked by r/IceChewersAnonymous, though they also agree that it has significant longevity issues. [A quick search shows the love/hate the community has for it.](https://www.reddit.com/r/IceChewersAnonymous/search/?q=opal+2)
 
 More importantly, several members of the community have taken attempts to repair the machine pretty far.
+
 - https://www.reddit.com/r/IceChewersAnonymous/comments/1ophadu/opal_20_repair_update/
 - https://www.reddit.com/r/IceChewersAnonymous/comments/1hxlbkg/fixing_the_opal_20/
 - https://www.reddit.com/r/IceChewersAnonymous/comments/159ts6e/ge_opal_20_add_water_fix/
@@ -44,8 +62,8 @@ More importantly, several members of the community have taken attempts to repair
 
 # Nominal voltages recorded from the opal 2 ice maker during operation
 
-| Part                    | Connector Type          | Voltage
-|------------------------ |------------------------ |-------- |
+| Part                    | Connector Type          | Voltage |
+| ----------------------- | ----------------------- | ------- |
 | UV Light                | JST XH 2-pin connector  | 12V DC  |
 | Compressor              | JST VHR 3-pin connector | 120V AC |
 | Auger Motor             | JST VHR 3-pin connector | 120V AC |
@@ -53,7 +71,7 @@ More importantly, several members of the community have taken attempts to repair
 | Fan                     | JST XH 2-pin connector  | 12V DC  |
 | WiFi Board              | TBD                     | TBD     |
 | Front Panel             | TBD                     | TBD     |
-| Ice Box LED             | JST XH 2-pin connector  | 12V DC  |
+| Ice Box LED             | JST XH 2-pin connector  | 5V DC   |
 | Ice box presence switch | JST XH 2-pin connector  | 5V DC   |
 | Internal Tank Floats    | JST XH 4-pin connector  | 5V DC   |
 | IR LED For Capacity     | JST XH 2-pin connector  | 5V DC   |
