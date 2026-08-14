@@ -1,3 +1,7 @@
+// Copyright (C) 2026 SomeAspy (Aiden B. amb@aspy.dev)
+// SPDX-License-Identifier: GPL-3.0-only
+// https://github.com/someaspy/GE-Opal-2-fixes
+
 #include <Arduino.h>
 #include <EmonLib.h>
 
@@ -23,7 +27,7 @@ const int MotorAmmeter = A0;
 EnergyMonitor augerMeter;
 
 void setup() {
-    Serial.begin(115200);
+  Serial.begin(115200);
 
   // Grounded inputs need to be pulled up
   pinMode(PowerSwitch, INPUT_PULLUP);
@@ -42,17 +46,34 @@ void setup() {
   pinMode(Fan, OUTPUT);
   pinMode(UvLed, OUTPUT);
   pinMode(Pump, OUTPUT);
-  augerMeter.current(MotorAmmeter, 5.76); // Calibration factor by gemini, because I'm not calculating it
+  augerMeter.current(
+      MotorAmmeter,
+      5.76); // Calibration factor by gemini, because I hate complex math
 };
 
 // Persistent Values
 bool pumping = false;
 bool waitingForReset = false;
-const unsigned long pumpTimeout = 30000; // 30s
+const unsigned long pumpTimeout =
+    120000; // 2m - may be a bit much but when the filter is installed waterflow
+            // can drop significantly.
 unsigned long pumpStartedTime = 0;
-unsigned long compressorStopTime = 300001;
+unsigned long compressorStopTime = 300001; // If the machine is off, assume its
+                                           // been off for a safe amount of time
 const unsigned long compressorTimeout = 300000; // 5m
 bool isCompressorRunning = false;
+unsigned long compressorStartTime = 0;
+
+// From testing the machine usually settles around 0.45A to 0.48A.
+// 0.05 means the compressor is off.
+// Note currentDrawLimit is ignored when the compressor first starts to
+// accomodate inrush current. Tweak as needed.
+const float currentDrawLimit = 0.50;
+const unsigned long compressorGracePeriod = 15000; // 15s for inrush to settle
+
+bool defrostCycle = false;
+const unsigned long defrostCycleLength = 600000; // 10m
+unsigned long defrostCycleStartTime = 0;
 
 void loop() {
   // DIGITAL READS ARE INVERTED BECAUSE WE PULL UP!!!
@@ -60,27 +81,34 @@ void loop() {
   const bool isTankFull = digitalRead(TankFull) == LOW;
   const bool isTankEmpty = digitalRead(TankEmpty) == LOW;
   const bool isBinInserted = digitalRead(BinSwitch) == LOW;
-  double currentAmps = augerMeter.calcIrms(1480);
+  const double currentDraw = augerMeter.calcIrms(
+      1480); // IRM sample count by Gemini, because I can't be bothered.
 
-  Serial.println(currentAmps);
+  Serial.println(currentDraw);
 
-  if (!isPowered || waitingForReset) {
+  if (!isPowered || waitingForReset || defrostCycle) {
     Serial.println("Halted");
-      digitalWrite(Pump, LOW);
-      digitalWrite(Compressor, LOW);
-      digitalWrite(Fan, LOW);
-      digitalWrite(UvLed, LOW);
-      digitalWrite(IrBlaster, LOW);
-      digitalWrite(Auger, LOW);
+    digitalWrite(Pump, LOW);
+    digitalWrite(Compressor, LOW);
+    digitalWrite(Fan, LOW);
+    digitalWrite(UvLed, LOW);
+    digitalWrite(IrBlaster, LOW);
+    digitalWrite(Auger, LOW);
+    if (isCompressorRunning) {
       compressorStopTime = millis();
-      pumping = false;
+      isCompressorRunning = false;
+    }
+    pumping = false;
     if (!isBinInserted) {
-        waitingForReset = false;
+      waitingForReset = false;
+    }
+    if (millis() - defrostCycleStartTime > defrostCycleLength) {
+      defrostCycle = false;
     }
     return;
   }
 
-  if (pumping && (millis() - pumpStartedTime  > pumpTimeout)) {
+  if (pumping && (millis() - pumpStartedTime > pumpTimeout)) {
     // We are probably out of water
     Serial.println("no water?");
     waitingForReset = true;
@@ -101,12 +129,20 @@ void loop() {
     pumping = false;
   }
 
-  if(!isCompressorRunning){
-      if(millis()-compressorStopTime < compressorTimeout){
-          return;
-      }
-      digitalWrite(Compressor, HIGH);
-      digitalWrite(Fan, HIGH);
-      digitalWrite(Auger, HIGH);
+  if (!isCompressorRunning) {
+    if (millis() - compressorStopTime < compressorTimeout) {
+      return;
+    }
+    digitalWrite(Compressor, HIGH);
+    digitalWrite(Fan, HIGH);
+    digitalWrite(Auger, HIGH);
+    compressorStartTime = millis();
+    isCompressorRunning = true;
+  }
+
+  if (currentDraw >= currentDrawLimit &&
+      millis() - compressorStartTime > compressorGracePeriod) {
+    defrostCycle = true;
+    defrostCycleStartTime = millis();
   }
 }
